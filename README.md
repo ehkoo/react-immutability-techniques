@@ -1,0 +1,1 @@
+Demo về áp dụng các kỹ thuật về tính bất biển của dữ liệu được đề cập trong bài viết ở [https://ehkoo.com/bai-viet/array-object-immutability-javascript](https://ehkoo.com/bai-viet/array-object-immutability-javascript).
