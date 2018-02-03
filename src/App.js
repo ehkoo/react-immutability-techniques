@@ -6,9 +6,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h4 class="mx-2 my-2">
+        <h4 style={{ margin: '2rem .5rem' }}>
           Xem bài viết:
-          <a href="https://ehkoo.com/bai-viet/array-object-immutability-javascript" target="_blank">
+          <a
+            href="https://ehkoo.com/bai-viet/array-object-immutability-javascript"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Tuyệt chiêu đảm bảo tính bất biến trong JavaScript
           </a>
         </h4>
