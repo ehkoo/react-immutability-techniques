@@ -10,6 +10,7 @@ class ProductList extends React.Component {
 
   resetState = () => {
     this.setState({
+      products: this.props.products,
       searchKeyword: '',
       sortField: this.props.initSortField,
       sortDirection: this.props.initSortDirection,
@@ -83,6 +84,12 @@ class ProductList extends React.Component {
     })
   }
 
+  doRemoveProduct = product => e => {
+    this.setState(old => {
+      return { products: old.products.filter(p => p !== product) }
+    })
+  }
+
   getSortIcon(fieldName, { sortField, sortDirection }) {
     if (fieldName !== sortField) return null
 
@@ -90,7 +97,7 @@ class ProductList extends React.Component {
   }
 
   render() {
-    const products = this.filterProducts(this.props.products, this.state)
+    const products = this.filterProducts(this.state.products || this.props.products, this.state)
 
     return (
       <div className="my-2">
@@ -132,7 +139,7 @@ class ProductList extends React.Component {
                 <td>{product.name}</td>
                 <td>¥{product.price}</td>
                 <td>
-                  <button className="btn btn-error">
+                  <button className="btn btn-error" onClick={this.doRemoveProduct(product)}>
                     <i className="icon icon-delete" />
                   </button>
                 </td>
