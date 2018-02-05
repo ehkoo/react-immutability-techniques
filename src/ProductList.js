@@ -19,7 +19,8 @@ class ProductList extends React.Component {
   }
 
   searchProducts(products, keyword) {
-    const regex = new RegExp(keyword, 'gi')
+    const regex = new RegExp(keyword, 'i')
+
     return products.filter(product => regex.test(product.name))
   }
 
